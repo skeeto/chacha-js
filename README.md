@@ -1,12 +1,13 @@
 # ChaCha20 in JavaScript
 
-This is an implementation of the ChaCha stream cipher in JavaScript.
+This is an implementation of the [ChaCha stream cipher][chacha] in
+JavaScript.
 
 ## API
 
 The only function in the API is a constructor that accepts an
-ArrayBuffer key and ArrayBuffer IV, returnign a function that generates
-the stream 64-bytes at a time. The stream is contained in a 64-byte
+ArrayBuffer key and ArrayBuffer IV, returning a function that generates
+the stream 64 bytes at a time. The stream itself is a 64-byte
 ArrayBuffer. This ArrayBuffer is reused between generator calls.
 
 ```js
@@ -16,7 +17,7 @@ let iv = new ArrayBuffer(CHACHA_IVSIZE);
 // ... set bytes of key and IV ...
 let cipher = new ChaCha(key, iv);
 
-/* Encryption */
+/* Encryption / Decryption */
 let block = new Uint8Array(cipher());
 // ... consume the output ...
 cipher();  // fill the buffer with more output
