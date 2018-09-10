@@ -48,7 +48,7 @@ function ChaCha(key, iv) {
             x[a] += x[b]; x[d] = rotate(x[d] ^ x[a], 16);
             x[c] += x[d]; x[b] = rotate(x[b] ^ x[c], 12);
             x[a] += x[b]; x[d] = rotate(x[d] ^ x[a],  8);
-            x[c] += x[d]; x[b] = rotate(x[b] ^ x[c],  7)
+            x[c] += x[d]; x[b] = rotate(x[b] ^ x[c],  7);
         }
         output.set(state);
         for (let i = 0; i < CHACHA_ROUNDS; i += 2) {
